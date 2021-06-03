@@ -1,0 +1,19 @@
+{
+  "name": "string-ops",
+  "version": "1.0.0",
+  "description": "Validation operation on strings",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sirageDb/string-ops.git"
+  },
+  "author": "Sirage AL DBIYAT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sirageDb/string-ops/issues"
+  },
+  "homepage": "https://github.com/sirageDb/string-ops#readme"
+}
