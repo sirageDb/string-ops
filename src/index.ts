@@ -1,6 +1,7 @@
 import containCapitalLetters from "./validators/containCapitalLetters";
+import { isEmpty } from "./validators/isEmpty";
 
-const name = "sirage";
-const name1 = "Sirage";
-const status = containCapitalLetters(name1, 2);
+const name = "qdv";
+
+const status = isEmpty(name, true);
 console.log(status);
