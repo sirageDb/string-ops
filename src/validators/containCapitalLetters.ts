@@ -62,7 +62,7 @@ function containCapitalLetters(
   //========================================================
 
   //if it's true
-  if (parameterType === "boolean") {
+  if (parameterType === "boolean" && inputIsBeingUsed(stringToCheck)) {
     if (parameter === true) {
       let regex = /[a-z]/;
       regex.test(stringToCheck) && (finalResult.objectiveResolved = false);

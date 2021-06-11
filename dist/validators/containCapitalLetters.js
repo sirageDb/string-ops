@@ -16,7 +16,7 @@ function containCapitalLetters(stringToCheck, parameter) {
             if (Object.keys(parameter).length !== 2) {
                 throw new Error("Validator condition should have 2 keys");
             }
-            if (!("minRepition" in parameter && "maxRepition" in parameter)) {
+            if (!("minRepition" in parameter || "maxRepition" in parameter)) {
                 throw new Error("Validator condition should have both minRepition and maxRepition parameter");
             }
         }
@@ -47,7 +47,7 @@ function containCapitalLetters(stringToCheck, parameter) {
     };
     //========================================================
     //if it's true
-    if (parameterType === "boolean") {
+    if (parameterType === "boolean" && inputIsBeingUsed(stringToCheck)) {
         if (parameter === true) {
             let regex = /[a-z]/;
             regex.test(stringToCheck) && (finalResult.objectiveResolved = false);
