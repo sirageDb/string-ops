@@ -7,6 +7,10 @@ class ErrorHandler extends Error {
     validatorPropertyTypeError(validatorName, typeName) {
         throw new Error('string-ops ERROR ::: ' + validatorName + ' is not a ' + typeName + ' type');
     }
+    //TODO maybe giving an array and make all 
+    validatorPropertyRequiredKeys(validatorName, requiredKeyName1, requiredKeyName2) {
+        throw new Error('string-ops ERROR ::: ' + validatorName + ' should have both  ' + requiredKeyName1 + ' and ' + requiredKeyName2);
+    }
     undefinedError() {
         throw new Error('string-ops ERROR ::: String to be checked has a type of undefined');
     }
