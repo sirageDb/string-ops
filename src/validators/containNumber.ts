@@ -16,7 +16,6 @@ type validatorPropertyType =
 
 export function containNumber(stringToCheck: string, validatorProperty: validatorPropertyType) {
 
-
     let finalResult = {
         objectiveResolved: false,
         validator: "containNumber"
