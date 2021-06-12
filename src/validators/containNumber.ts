@@ -6,15 +6,7 @@ import ErrorHandler from "../bin/ErrorHandler";
 //TODO validationContainer
 //TODO separate each functionality into separate exported functions e.i when validator parameter is true,number it is another separate exported fucntion
 
-type validatorPropertyType =
-    | boolean
-    | { minRepition: number, maxRepition: number }
-    | { minRepition: number, maxRepition: true }
-    | { minRepition: true, maxRepition: number }
-    | number
-
-
-export function containNumber(stringToCheck: string, validatorProperty: validatorPropertyType) {
+export function containNumber(stringToCheck: string, validatorOption: containNumberOptionsType) {
 
     let finalResult = {
         objectiveResolved: false,
@@ -42,28 +34,28 @@ export function containNumber(stringToCheck: string, validatorProperty: validato
     };
 
     const error = new ErrorHandler();
-    const validatorPropertyTypeChecker = (validatorProperty: any) => {
-        if (typeof validatorProperty === "object") {
-            if (Object.keys(validatorProperty).length !== 2) {
+    const validatorOptionTypeChecker = (validatorOption: any) => {
+        if (typeof validatorOption === "object") {
+            if (Object.keys(validatorOption).length !== 2) {
                 error.validatorPropertyKeysNumberError("containNumber", 2);
             }
-            if (!("minRepition" in validatorProperty || "maxRepition" in validatorProperty)) {
+            if (!("minRepition" in validatorOption || "maxRepition" in validatorOption)) {
                 error.validatorPropertyRequiredKeys("containNumber", "maxRepition", "minRepition");
             }
         }
-        if (typeof validatorProperty !== "boolean" && typeof validatorProperty !== "object" && typeof validatorProperty !== "number") {
-            error.validatorPropertyTypeError("containNumber", typeof validatorProperty);
+        if (typeof validatorOption !== "boolean" && typeof validatorOption !== "object" && typeof validatorOption !== "number") {
+            error.validatorPropertyTypeError("containNumber", typeof validatorOption);
         }
-        return typeof validatorProperty;
+        return typeof validatorOption;
     }
 
-    const validatorPropertyType = validatorPropertyTypeChecker(validatorProperty);
+    const validatorPropertyType = validatorOptionTypeChecker(validatorOption);
     const numberOfNumbersinString = numberCounter(stringToCheck);
     //=======================================================================
 
     if (validatorPropertyType === "object" && inputIsBeingUsed(stringToCheck)) {
-        let propertyMinRepition = typeof validatorProperty === "object" && validatorProperty.minRepition;
-        let propertyMaxRepition = typeof validatorProperty === "object" && validatorProperty.maxRepition;
+        let propertyMinRepition = typeof validatorOption === "object" && validatorOption.minRepition;
+        let propertyMaxRepition = typeof validatorOption === "object" && validatorOption.maxRepition;
 
         if(numberOfNumbersinString === 0){
             finalResult.objectiveResolved = false;
@@ -103,7 +95,7 @@ export function containNumber(stringToCheck: string, validatorProperty: validato
         }
 
     } else if (validatorPropertyType === "boolean" && inputIsBeingUsed(stringToCheck) === true) {
-        if (validatorProperty === true) {
+        if (validatorOption === true) {
             numberCounter(stringToCheck);
             if (numberOfNumbersinString < stringToCheck.length) {
                 finalResult.objectiveResolved = false;
@@ -112,7 +104,7 @@ export function containNumber(stringToCheck: string, validatorProperty: validato
                 finalResult.objectiveResolved = true;
                 return finalResult;
             }
-        } else if (validatorProperty === false) {
+        } else if (validatorOption === false) {
             numberCounter(stringToCheck);
             if (numberOfNumbersinString > 0) {
                 finalResult.objectiveResolved = false;
@@ -125,7 +117,7 @@ export function containNumber(stringToCheck: string, validatorProperty: validato
     }
     else if (validatorPropertyType === "number" && inputIsBeingUsed(stringToCheck) === true) {
         numberCounter(stringToCheck);
-        if (numberOfNumbersinString !== validatorProperty) {
+        if (numberOfNumbersinString !== validatorOption) {
             finalResult.objectiveResolved = false;
             return finalResult;
         } else {

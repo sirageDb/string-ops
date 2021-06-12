@@ -1,5 +1,4 @@
-type TvalidatorProperties = true | false
-export function isEmpty(stringToCheck: string, validatorProperty: TvalidatorProperties) {
+export function isEmpty(stringToCheck: string, validatorOption: isEmptyOptionType) {
 
     //========================================================
     let finalResult = {
@@ -7,14 +6,14 @@ export function isEmpty(stringToCheck: string, validatorProperty: TvalidatorProp
         validator: "isEmpty"
     };
     //========================================================
-    const validatorPropertyTypeChecker = (validatorProperties: any) => {
-        if (typeof validatorProperties !== "boolean") {
+    const validatorPropertyTypeChecker = (validatorOption: any) => {
+        if (typeof validatorOption !== "boolean") {
             throw new Error("ERROR : isEmpty Validator property is not a boolean type");
         }
-        return typeof (validatorProperties);
+        return typeof (validatorOption);
     }
 
-    const validatorPropertyType = validatorPropertyTypeChecker(validatorProperty);
+    const validatorPropertyType = validatorPropertyTypeChecker(validatorOption);
 
     if (validatorPropertyType === "boolean") {
         let regex = /^\s+/;
