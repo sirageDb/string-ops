@@ -1,9 +1,6 @@
 import ErrorHandler from "../bin/ErrorHandler";
 import stringNotNull from "../bin/stringNotNull";
 
-//TODO create typeChecker class
-//TODO convert all to class
-//TODO file containing all types
 //TODO validationContainer
 //TODO separate each functionality into separate exported functions e.i when validator parameter is true,number it is another separate exported fucntion
 

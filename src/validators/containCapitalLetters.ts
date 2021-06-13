@@ -1,5 +1,3 @@
-//check if input is not empty
-//check if it has capital letters
 //TODO answer here https://stackoverflow.com/questions/1013239/can-i-get-the-name-of-the-currently-running-function-in-javascript
 
 import stringNotNull from "../bin/stringNotNull";
@@ -29,10 +27,6 @@ export default function containCapitalLetters(stringToCheck: string, validatorOp
   };
 
   const validatorOptionType = validatorOptionTypeChecker(validatorOption);
-
-  //TODO check what happens here
-  //return true if input is being used / return false if not
-  //========================================================
 
   //========================================================
   let numberOfCapitalLetters = 0;
