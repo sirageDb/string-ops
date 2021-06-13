@@ -1,4 +1,4 @@
-export function isEmpty(stringToCheck: string, validatorOption: isEmptyOptionType) {
+export default function isEmpty(stringToCheck: string, validatorOption: isEmptyOptionType) {
 
     //========================================================
     let finalResult = {

@@ -1,6 +1,6 @@
-import {containCapitalLetters} from "./validators/containCapitalLetters";
-import { isEmpty } from "./validators/isEmpty";
-import { containNumber } from "./validators/containNumber"
+import containCapitalLetters from "./validators/containCapitalLetters";
+import isEmpty from "./validators/isEmpty";
+import containNumber from "./validators/containNumber"
 
 const password = "aze3215  1azezd";
 

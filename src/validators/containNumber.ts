@@ -1,4 +1,5 @@
 import ErrorHandler from "../bin/ErrorHandler";
+import stringNotNull from "../bin/stringNotNull";
 
 //TODO create typeChecker class
 //TODO convert all to class
@@ -6,20 +7,14 @@ import ErrorHandler from "../bin/ErrorHandler";
 //TODO validationContainer
 //TODO separate each functionality into separate exported functions e.i when validator parameter is true,number it is another separate exported fucntion
 
-export function containNumber(stringToCheck: string, validatorOption: containNumberOptionsType) {
+export default function containNumber(stringToCheck: string, validatorOption: containNumberOptionsType) {
 
     let finalResult = {
         objectiveResolved: false,
         validator: "containNumber"
     }
 
-    //=======================================================================
-    const inputIsBeingUsed = (stringToCheck: string) => {
-        if (stringToCheck.length > 0)
-            return true;
-        if (stringToCheck.length === 0)
-            return false;
-    }
+    //======================================================================
 
     let numberCounter = function (stringToCheck: string) {
         let numberOfNUmbersInString = 0;
@@ -53,7 +48,7 @@ export function containNumber(stringToCheck: string, validatorOption: containNum
     const numberOfNumbersinString = numberCounter(stringToCheck);
     //=======================================================================
 
-    if (validatorPropertyType === "object" && inputIsBeingUsed(stringToCheck)) {
+    if (validatorPropertyType === "object" && stringNotNull(stringToCheck)) {
         let propertyMinRepition = typeof validatorOption === "object" && validatorOption.minRepition;
         let propertyMaxRepition = typeof validatorOption === "object" && validatorOption.maxRepition;
 
@@ -94,7 +89,7 @@ export function containNumber(stringToCheck: string, validatorOption: containNum
             }
         }
 
-    } else if (validatorPropertyType === "boolean" && inputIsBeingUsed(stringToCheck) === true) {
+    } else if (validatorPropertyType === "boolean" && stringNotNull(stringToCheck) === true) {
         if (validatorOption === true) {
             numberCounter(stringToCheck);
             if (numberOfNumbersinString < stringToCheck.length) {
@@ -115,7 +110,7 @@ export function containNumber(stringToCheck: string, validatorOption: containNum
             }
         }
     }
-    else if (validatorPropertyType === "number" && inputIsBeingUsed(stringToCheck) === true) {
+    else if (validatorPropertyType === "number" && stringNotNull(stringToCheck) === true) {
         numberCounter(stringToCheck);
         if (numberOfNumbersinString !== validatorOption) {
             finalResult.objectiveResolved = false;

@@ -2,7 +2,9 @@
 //check if it has capital letters
 //TODO answer here https://stackoverflow.com/questions/1013239/can-i-get-the-name-of-the-currently-running-function-in-javascript
 
-export function containCapitalLetters(stringToCheck: string, validatorOption: containCapitalLettersOptionType) {
+import stringNotNull from "../bin/stringNotNull";
+
+export default function containCapitalLetters(stringToCheck: string, validatorOption: containCapitalLettersOptionType) {
   //========================================================
   let finalResult = {
     objectiveResolved: false,
@@ -31,12 +33,7 @@ export function containCapitalLetters(stringToCheck: string, validatorOption: co
   //TODO check what happens here
   //return true if input is being used / return false if not
   //========================================================
-  const inputIsBeingUsed = (stringToCheck: string) => {
-    if (stringToCheck.length > 0)
-      return true;
-    if (stringToCheck.length === 0)
-      return false;
-  };
+
   //========================================================
   let numberOfCapitalLetters = 0;
   const capitalLettersCounter = (stringToCheck: string) => {
@@ -52,7 +49,7 @@ export function containCapitalLetters(stringToCheck: string, validatorOption: co
   //========================================================
 
   //if it's true
-  if (validatorOptionType === "boolean" && inputIsBeingUsed(stringToCheck)) {
+  if (validatorOptionType === "boolean" && stringNotNull(stringToCheck)) {
     if (validatorOption === true) {
       let regex = /[a-z]/;
       regex.test(stringToCheck) && (finalResult.objectiveResolved = false);
@@ -68,7 +65,7 @@ export function containCapitalLetters(stringToCheck: string, validatorOption: co
     }
   }
   //========================================================
-  if (validatorOptionType === "number" && inputIsBeingUsed(stringToCheck)) {
+  if (validatorOptionType === "number" && stringNotNull(stringToCheck)) {
 
     capitalLettersCounter(stringToCheck);
     if (validatorOption === numberOfCapitalLetters) {
@@ -82,7 +79,7 @@ export function containCapitalLetters(stringToCheck: string, validatorOption: co
   }
   //========================================================
 
-  if (validatorOptionType === "object" && inputIsBeingUsed(stringToCheck)) {
+  if (validatorOptionType === "object" && stringNotNull(stringToCheck)) {
 
     const propertyValueMinimum = typeof validatorOption === "object" && validatorOption.minRepition;
     const propertyValueMaximum = typeof validatorOption === "object" && validatorOption.maxRepition;
