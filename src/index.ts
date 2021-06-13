@@ -1,10 +1,11 @@
 import containCapitalLetters from "./validators/containCapitalLetters";
 import isUsed from "./validators/isUed";
 import containNumber from "./validators/containNumber"
+import isEmail from "./validators/isEmail";
 
-const password = "aze3215  1azezd";
+const email = "sirage.aldbiyat@gmail..com";
 
 //conflict test
-const status = containNumber(password, 5);
+const status = isEmail(email);
 
 console.log(status);
