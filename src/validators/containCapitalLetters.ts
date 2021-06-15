@@ -1,6 +1,7 @@
 //TODO answer here https://stackoverflow.com/questions/1013239/can-i-get-the-name-of-the-currently-running-function-in-javascript
 
 import stringNotNull from "../bin/stringNotNull";
+import ErrorHandler from "../bin/ErrorHandler";
 
 export default function containCapitalLetters(stringToCheck: string, validatorOption: containCapitalLettersOptionType) {
   //========================================================
@@ -12,16 +13,18 @@ export default function containCapitalLetters(stringToCheck: string, validatorOp
 
   //TODO check if not string
   const validatorOptionTypeChecker = (validatorOption: any) => {
+    const error = new ErrorHandler();
+
     if (typeof validatorOption !== "boolean" && typeof validatorOption === "object") {
       if (Object.keys(validatorOption).length !== 2) {
-        throw new Error("Validator condition should have 2 keys");
+        error.validatorPropertyKeysNumberError("containCapitalLetters", 2)
       }
       if (!("minRepition" in validatorOption || "maxRepition" in validatorOption)) {
-        throw new Error("Validator condition should have both minRepition and maxRepition parameter");
+        error.validatorPropertyRequiredKeys("containCapitalLetters", "minRepition", "maxRepition");
       }
     }
     if (typeof validatorOption !== "boolean" && typeof validatorOption !== "object" && typeof validatorOption !== "number") {
-      throw new Error("Validator condition can take only nubmer or boolean or an object as validator condition");
+      error.validatorPropertyTypeError("containCapitalLetters", "boolean or object or number");
     }
     return typeof validatorOption;
   };
