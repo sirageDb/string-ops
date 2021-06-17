@@ -12,4 +12,5 @@ type containCapitalLettersOptionType =
     | { minRepition: true, maxRepition: number }
     | number
 
-type isEmptyOptionType = true | false
+type isEmptyOptionType = true | false;
+type minLengthOptionType = number;
