@@ -2,10 +2,16 @@ import containCapitalLetters from "./validators/containCapitalLetters";
 import isUsed from "./validators/isUed";
 import containNumber from "./validators/containNumber"
 import isEmail from "./validators/isEmail";
+import containerValidator from "./validators/containerValidator"
 
-const email = "sirage.aldbiyat@gmail..com";
+//should contain 2 capitalLetters && 2 numbers
+const password = "AA00qscqsc";
 
-//conflict test
-const status = isEmail(email);
+const resContaineCapitalLetters = containCapitalLetters(password, 2);
+const resContainNumber = containNumber(password, 2);
 
-console.log(status);
+console.log(resContaineCapitalLetters);
+console.log(resContainNumber);
+
+
+// const resContainer = containerValidator([resContainNumber,resContaineCapitalLetters]);
