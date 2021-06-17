@@ -3,7 +3,8 @@ type validatorFinalResult = {
     objectiveResolved: false,
     validator: string,
 }
-
+//TODO Fix types
+//TODO Implement an optional parameter for conditional
 type option = { objectiveResolved: boolean, validator: string }[];
 
 export default function containerValidator(validationResults: option) {
