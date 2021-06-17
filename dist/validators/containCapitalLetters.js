@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const stringNotNull_1 = __importDefault(require("../bin/stringNotNull"));
+const ErrorHandler_1 = __importDefault(require("../bin/ErrorHandler"));
 function containCapitalLetters(stringToCheck, validatorOption) {
     //========================================================
     let finalResult = {
@@ -14,16 +15,17 @@ function containCapitalLetters(stringToCheck, validatorOption) {
     //========================================================
     //TODO check if not string
     const validatorOptionTypeChecker = (validatorOption) => {
+        const error = new ErrorHandler_1.default();
         if (typeof validatorOption !== "boolean" && typeof validatorOption === "object") {
             if (Object.keys(validatorOption).length !== 2) {
-                throw new Error("Validator condition should have 2 keys");
+                error.validatorPropertyKeysNumberError("containCapitalLetters", 2);
             }
             if (!("minRepition" in validatorOption || "maxRepition" in validatorOption)) {
-                throw new Error("Validator condition should have both minRepition and maxRepition parameter");
+                error.validatorPropertyRequiredKeys("containCapitalLetters", "minRepition", "maxRepition");
             }
         }
         if (typeof validatorOption !== "boolean" && typeof validatorOption !== "object" && typeof validatorOption !== "number") {
-            throw new Error("Validator condition can take only nubmer or boolean or an object as validator condition");
+            error.validatorPropertyTypeError("containCapitalLetters", "boolean or object or number");
         }
         return typeof validatorOption;
     };
