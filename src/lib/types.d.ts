@@ -14,3 +14,5 @@ type containCapitalLettersOptionType =
 
 type isEmptyOptionType = true | false;
 type minLengthOptionType = number;
+type maxLengthOptionType = number;
+
