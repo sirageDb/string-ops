@@ -27,7 +27,6 @@ export default function numberBiggerThan(stringToCheck: string, validatorOption:
             }
         }
 
-        console.log(numbersOfNumbersInString);
         if (numbersOfNumbersInString !== stringToCheck.length) {
             error.custom("numberBiggerThan", "should get only numbers");
         }
