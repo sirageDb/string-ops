@@ -10,7 +10,7 @@ export default function maxLength(stringToCheck: string, validatorOption: maxLen
     const validatorOptionTypeChecker = (validatorOption: any) => {
         const error = new ErrorHandler();
         if (typeof validatorOption !== "number") {
-            error.validatorPropertyTypeError("minLength", "number")
+            error.validatorPropertyTypeError("maxLength", "number")
         }
         return typeof validatorOption;
     }

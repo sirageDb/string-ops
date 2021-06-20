@@ -16,4 +16,9 @@ export default class ErrorHandler extends Error {
     undefinedError() {
         throw new Error('string-ops ERROR ::: String to be checked has a type of undefined');
     }
+
+    custom(validatorName : string, customizedMessage : string) {
+        throw new Error('string-ops ERROR ::: '+validatorName +' ::: '+ customizedMessage);
+    }
+
 }

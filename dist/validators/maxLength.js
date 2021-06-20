@@ -13,7 +13,7 @@ function maxLength(stringToCheck, validatorOption) {
     const validatorOptionTypeChecker = (validatorOption) => {
         const error = new ErrorHandler_1.default();
         if (typeof validatorOption !== "number") {
-            error.validatorPropertyTypeError("minLength", "number");
+            error.validatorPropertyTypeError("maxLength", "number");
         }
         return typeof validatorOption;
     };
