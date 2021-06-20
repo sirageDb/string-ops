@@ -5,12 +5,14 @@ import isEmail from "./validators/isEmail";
 import containerValidator from "./validators/containerValidator"
 import minLength from "./validators/minLength";
 import maxLength from "./validators/maxLength";
+import numberBiggerThan from "./validators/numberBiggerThan";
 
 //should contain 2 capitalLetters && 2 numbers
-const password = "AA00qscqsc";
-const v_maxLength = maxLength(password, 20);
+const randomNumber = "21";
+const v_numberBiggerThan = numberBiggerThan(randomNumber, 20);
 
-console.log(v_maxLength);
+
+console.log(v_numberBiggerThan);
 
 
 
