@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const ErrorHandler_1 = __importDefault(require("../bin/ErrorHandler"));
 const stringNotNull_1 = __importDefault(require("../bin/stringNotNull"));
-function numberBiggerThan(stringToCheck, validatorOption) {
+function numberSmallerThan(stringToCheck, validatorOption) {
     let finalResult = {
         objectiveResolved: false,
         validator: "numberBiggerThan"
@@ -33,7 +33,7 @@ function numberBiggerThan(stringToCheck, validatorOption) {
             error.custom("numberBiggerThan", "should get only numbers");
         }
         const stringToCheckConverted = Number(stringToCheck);
-        if (stringToCheckConverted > validatorOption) {
+        if (stringToCheckConverted < validatorOption) {
             finalResult.objectiveResolved = true;
             return finalResult;
         }
@@ -43,4 +43,4 @@ function numberBiggerThan(stringToCheck, validatorOption) {
         }
     }
 }
-exports.default = numberBiggerThan;
+exports.default = numberSmallerThan;
