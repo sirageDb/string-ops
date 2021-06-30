@@ -21,3 +21,10 @@ type containSpecialCharactersOptionType =
 | { minRepition: number, maxRepition: true }
 | { minRepition: true, maxRepition: number }
 | number
+
+type containSmallLettersOptionType =
+| boolean
+| { minRepition: number, maxRepition: number }
+| { minRepition: number, maxRepition: true }
+| { minRepition: true, maxRepition: number }
+| number
