@@ -25,14 +25,14 @@ function containSmallLetters(stringToCheck, validatorOption) {
     const validatorOptionTypeChecker = (validatorOption) => {
         if (typeof validatorOption === "object") {
             if (Object.keys(validatorOption).length !== 2) {
-                error.validatorPropertyKeysNumberError("containNumber", 2);
+                error.validatorPropertyKeysNumberError("containSmallLetters", 2);
             }
             if (!("minRepition" in validatorOption || "maxRepition" in validatorOption)) {
-                error.validatorPropertyRequiredKeys("containNumber", "maxRepition", "minRepition");
+                error.validatorPropertyRequiredKeys("containSmallLetters", "maxRepition", "minRepition");
             }
         }
         if (typeof validatorOption !== "boolean" && typeof validatorOption !== "object" && typeof validatorOption !== "number") {
-            error.validatorPropertyTypeError("containNumber", typeof validatorOption);
+            error.validatorPropertyTypeError("containSmallLetters", typeof validatorOption);
         }
         return typeof validatorOption;
     };

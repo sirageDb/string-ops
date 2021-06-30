@@ -1,7 +1,7 @@
 import ErrorHandler from "../bin/ErrorHandler"
 import stringNotNull from "../bin/stringNotNull";
 
-export default function numberSmallerThan(stringToCheck: string, validatorOption: number) {
+export function numberSmallerThan(stringToCheck: string, validatorOption: number) {
     let finalResult = {
         objectiveResolved: false,
         validator: "numberBiggerThan"

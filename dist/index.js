@@ -1,15 +1,9 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const containSmallLetters_1 = __importDefault(require("./validators/containSmallLetters"));
-//should contain 2 capitalLetters && 2 numbers
-const randomString = "sirAage";
-// const v_numberBiggerThan = numberBiggerThan(randomNumber, 20);
-// const v_numberSmallerThan = numberSmallerThan(randomNumber, 20);
-// const v_specialChars = containSpecialCharacters(randomNumber, true);
-const v_containSmallLetter = containSmallLetters_1.default(randomString, true);
-console.log(v_containSmallLetter);
-//TODO try containNumber with 0 numbers 
-// const resContainer = containerValidator([resContainNumber,resContaineCapitalLetters]);
+exports.containNumber = void 0;
+const containNumber_1 = require("./validators/containNumber");
+var containNumber_2 = require("./validators/containNumber");
+Object.defineProperty(exports, "containNumber", { enumerable: true, get: function () { return containNumber_2.containNumber; } });
+const randomString = "azeazeze5";
+const v_containNumber = containNumber_1.containNumber(randomString, 5);
+console.log(v_containNumber);

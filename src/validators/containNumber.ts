@@ -4,7 +4,7 @@ import stringNotNull from "../bin/stringNotNull";
 //TODO validationContainer
 //TODO separate each functionality into separate exported functions e.i when validator parameter is true,number it is another separate exported fucntion
 
-export default function containNumber(stringToCheck: string, validatorOption: containNumberOptionsType) {
+export function containNumber(stringToCheck: string, validatorOption: containNumberOptionsType) {
 
     let finalResult = {
         objectiveResolved: false,

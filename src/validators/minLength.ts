@@ -1,7 +1,7 @@
 import ErrorHandler from "../bin/ErrorHandler";
 import stringNotNull from "../bin/stringNotNull";
 
-export default function minLength(stringToCheck: string, validatorOption: minLengthOptionType) {
+export function minLength(stringToCheck: string, validatorOption: minLengthOptionType) {
     let finalResult = {
         objectiveResolved: false,
         validator: "minLength"

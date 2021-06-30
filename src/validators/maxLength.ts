@@ -1,7 +1,7 @@
 import ErrorHandler from "../bin/ErrorHandler";
 import stringNotNull from "../bin/stringNotNull";
 
-export default function maxLength(stringToCheck: string, validatorOption: maxLengthOptionType) {
+export function maxLength(stringToCheck: string, validatorOption: maxLengthOptionType) {
     let finalResult = {
         objectiveResolved: false,
         validator: "maxLength"

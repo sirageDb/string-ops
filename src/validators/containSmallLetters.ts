@@ -1,7 +1,7 @@
 import ErrorHandler from "../bin/ErrorHandler";
 import stringNotNull from "../bin/stringNotNull";
 
-export default function containSmallLetters(
+export function containSmallLetters(
     stringToCheck: string,
     validatorOption: containSmallLettersOptionType
 ) {

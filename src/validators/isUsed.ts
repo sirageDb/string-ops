@@ -1,4 +1,4 @@
-export default function isUed(stringToCheck: string, validatorOption: isEmptyOptionType) {
+export function isUsed(stringToCheck: string, validatorOption: isEmptyOptionType) {
 
     //========================================================
     let finalResult = {

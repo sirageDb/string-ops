@@ -1,6 +1,6 @@
 import stringNotNull from "../bin/stringNotNull";
 
-export default function isEmail(stringToCheck: string) {
+export function isEmail(stringToCheck: string) {
     //========================================================
     let finalResult = {
         objectiveResolved: false,

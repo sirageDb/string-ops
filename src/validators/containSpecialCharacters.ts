@@ -1,7 +1,7 @@
 import ErrorHandler from "../bin/ErrorHandler"
 import stringNotNull from "../bin/stringNotNull";
 
-export default function containSpecialCharacters(stringToCheck: string, validatorOption: containSpecialCharactersOptionType) {
+export  function containSpecialCharacters(stringToCheck: string, validatorOption: containSpecialCharactersOptionType) {
     let finalResult = {
         objectiveResolved: false,
         validator: "containSpecialCharacters"

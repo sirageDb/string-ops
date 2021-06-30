@@ -3,7 +3,7 @@
 import stringNotNull from "../bin/stringNotNull";
 import ErrorHandler from "../bin/ErrorHandler";
 
-export default function containCapitalLetters(stringToCheck: string, validatorOption: containCapitalLettersOptionType) {
+export function containCapitalLetters(stringToCheck: string, validatorOption: containCapitalLettersOptionType) {
   //========================================================
   let finalResult = {
     objectiveResolved: false,
