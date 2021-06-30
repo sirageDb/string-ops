@@ -28,14 +28,14 @@ export default function containSmallLetters(
     const validatorOptionTypeChecker = (validatorOption: any) => {
         if (typeof validatorOption === "object") {
             if (Object.keys(validatorOption).length !== 2) {
-                error.validatorPropertyKeysNumberError("containNumber", 2);
+                error.validatorPropertyKeysNumberError("containSmallLetters", 2);
             }
             if (!("minRepition" in validatorOption || "maxRepition" in validatorOption)) {
-                error.validatorPropertyRequiredKeys("containNumber", "maxRepition", "minRepition");
+                error.validatorPropertyRequiredKeys("containSmallLetters", "maxRepition", "minRepition");
             }
         }
         if (typeof validatorOption !== "boolean" && typeof validatorOption !== "object" && typeof validatorOption !== "number") {
-            error.validatorPropertyTypeError("containNumber", typeof validatorOption);
+            error.validatorPropertyTypeError("containSmallLetters", typeof validatorOption);
         }
         return typeof validatorOption;
     }
@@ -107,7 +107,7 @@ export default function containSmallLetters(
             smallLettersCounter(stringToCheck);
             if (numberOfSmallLetters < minRepition || numberOfSmallLetters > maxRepition) {
                 finalResult.objectiveResolved = false;
-                return finalResult;  
+                return finalResult;
             } else {
                 finalResult.objectiveResolved = true;
                 return finalResult;
