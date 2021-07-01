@@ -1,9 +1,13 @@
 "use strict";
-//check if input is not empty
-//check if it has capital letters
 //TODO answer here https://stackoverflow.com/questions/1013239/can-i-get-the-name-of-the-currently-running-function-in-javascript
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-function containCapitalLetters(stringToCheck, parameter) {
+exports.containCapitalLetters = void 0;
+const stringNotNull_1 = __importDefault(require("../bin/stringNotNull"));
+const ErrorHandler_1 = __importDefault(require("../bin/ErrorHandler"));
+function containCapitalLetters(stringToCheck, validatorOption) {
     //========================================================
     let finalResult = {
         objectiveResolved: false,
@@ -11,30 +15,22 @@ function containCapitalLetters(stringToCheck, parameter) {
     };
     //========================================================
     //TODO check if not string
-    const parameterTypeChecker = (parameter) => {
-        if (typeof parameter !== "boolean" && typeof parameter === "object") {
-            if (Object.keys(parameter).length !== 2) {
-                throw new Error("Validator condition should have 2 keys");
+    const validatorOptionTypeChecker = (validatorOption) => {
+        const error = new ErrorHandler_1.default();
+        if (typeof validatorOption !== "boolean" && typeof validatorOption === "object") {
+            if (Object.keys(validatorOption).length !== 2) {
+                error.validatorPropertyKeysNumberError("containCapitalLetters", 2);
             }
-            if (!("minRepition" in parameter && "maxRepition" in parameter)) {
-                throw new Error("Validator condition should have both minRepition and maxRepition parameter");
+            if (!("minRepition" in validatorOption || "maxRepition" in validatorOption)) {
+                error.validatorPropertyRequiredKeys("containCapitalLetters", "minRepition", "maxRepition");
             }
         }
-        if (typeof parameter !== "boolean" && typeof parameter !== "object" && typeof parameter !== "number") {
-            throw new Error("Validator condition can take only nubmer or boolean or an object as validator condition");
+        if (typeof validatorOption !== "boolean" && typeof validatorOption !== "object" && typeof validatorOption !== "number") {
+            error.validatorPropertyTypeError("containCapitalLetters", "boolean or object or number");
         }
-        return typeof parameter;
+        return typeof validatorOption;
     };
-    const parameterType = parameterTypeChecker(parameter);
-    //TODO check what happens here
-    //return true if input is being used / return false if not
-    //========================================================
-    const inputIsBeingUsed = (stringToCheck) => {
-        if (stringToCheck.length > 0)
-            return true;
-        if (stringToCheck.length === 0)
-            return false;
-    };
+    const validatorOptionType = validatorOptionTypeChecker(validatorOption);
     //========================================================
     let numberOfCapitalLetters = 0;
     const capitalLettersCounter = (stringToCheck) => {
@@ -47,14 +43,14 @@ function containCapitalLetters(stringToCheck, parameter) {
     };
     //========================================================
     //if it's true
-    if (parameterType === "boolean") {
-        if (parameter === true) {
+    if (validatorOptionType === "boolean" && stringNotNull_1.default(stringToCheck)) {
+        if (validatorOption === true) {
             let regex = /[a-z]/;
             regex.test(stringToCheck) && (finalResult.objectiveResolved = false);
             finalResult.objectiveResolved = true;
             return finalResult;
         }
-        if (parameter === false) {
+        if (validatorOption === false) {
             let regex = /[A-Z]/;
             regex.test(stringToCheck) && (finalResult.objectiveResolved = true);
             finalResult.objectiveResolved = false;
@@ -62,21 +58,21 @@ function containCapitalLetters(stringToCheck, parameter) {
         }
     }
     //========================================================
-    if (parameterType === "number" && inputIsBeingUsed(stringToCheck)) {
+    if (validatorOptionType === "number" && stringNotNull_1.default(stringToCheck)) {
         capitalLettersCounter(stringToCheck);
-        if (parameter === numberOfCapitalLetters) {
+        if (validatorOption === numberOfCapitalLetters) {
             finalResult.objectiveResolved = true;
             return finalResult;
         }
-        if (parameter !== numberOfCapitalLetters) {
+        if (validatorOption !== numberOfCapitalLetters) {
             finalResult.objectiveResolved = false;
             return finalResult;
         }
     }
     //========================================================
-    if (parameterType === "object" && inputIsBeingUsed(stringToCheck)) {
-        const propertyValueMinimum = typeof parameter === "object" && parameter.minRepition;
-        const propertyValueMaximum = typeof parameter === "object" && parameter.maxRepition;
+    if (validatorOptionType === "object" && stringNotNull_1.default(stringToCheck)) {
+        const propertyValueMinimum = typeof validatorOption === "object" && validatorOption.minRepition;
+        const propertyValueMaximum = typeof validatorOption === "object" && validatorOption.maxRepition;
         const typeofPropertyValueMinimum = typeof propertyValueMinimum;
         const typeofPropertyValueMaximum = typeof propertyValueMaximum;
         if (propertyValueMinimum === true && typeofPropertyValueMaximum === 'number') {
@@ -114,4 +110,4 @@ function containCapitalLetters(stringToCheck, parameter) {
         }
     }
 }
-exports.default = containCapitalLetters;
+exports.containCapitalLetters = containCapitalLetters;

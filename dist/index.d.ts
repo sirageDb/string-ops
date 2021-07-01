@@ -1,4 +1,3 @@
-
 export { containCapitalLetters } from "./validators/containCapitalLetters";
 export { containerValidator } from "./validators/containerValidator";
 export { containSmallLetters } from "./validators/containSmallLetters";

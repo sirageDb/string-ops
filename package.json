@@ -1,25 +1,34 @@
 {
-    "name": "string-ops",
+    "name": "stringdation",
     "version": "1.0.0",
-    "description": "Validation operation on strings",
-    "main": "index.js",
+    "description": "stringdation, functional validation operations on strings, can be used in backend to validate form inputs strings as well as in frontend",
+    "keywords": [
+        "string",
+        "validation",
+        "javascript",
+        "typescript",
+        "frontend",
+        "backend",
+        "node",
+        "express",
+        "react",
+        "angular",
+        "vue"
+    ],
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": ["/dist"],
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "tsc",
-        "dev": "ts-node-dev --transpile-only --respawn  ./src/index.ts",
-        "prod": "tsc && node ./build/src/index.js"
+        "start": "tsc && node dist/index.js"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/sirageDb/string-ops.git"
+        "url": "git+https://github.com/sirageDb/stringdation.git"
     },
     "author": "Sirage AL DBIYAT",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/sirageDb/string-ops/issues"
+        "url": "https://github.com/sirageDb/stringdation/issues"
     },
-    "homepage": "https://github.com/sirageDb/string-ops#readme",
-    "devDependencies": {
-        "prettier": "^2.3.0"
-    }
+    "homepage": "https://github.com/sirageDb/stringdation#readme"
 }
