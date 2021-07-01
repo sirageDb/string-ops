@@ -1,7 +1,20 @@
 {
     "name": "string-ops",
-    "version": "0.0.1",
-    "description": "Validation operations on strings",
+    "version": "1.0.0",
+    "description": "String-ops, functional validation operations on strings, can be used in backend to validate form inputs strings as well as in frontend",
+    "keywords": [
+        "string",
+        "validation",
+        "javascript",
+        "typescript",
+        "frontend",
+        "backend",
+        "node",
+        "express",
+        "react",
+        "angular",
+        "vue"
+    ],
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "files": ["/dist"],
