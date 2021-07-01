@@ -1,7 +1,7 @@
 {
-    "name": "string-ops",
+    "name": "stringdation",
     "version": "1.0.0",
-    "description": "String-ops, functional validation operations on strings, can be used in backend to validate form inputs strings as well as in frontend",
+    "description": "stringdation, functional validation operations on strings, can be used in backend to validate form inputs strings as well as in frontend",
     "keywords": [
         "string",
         "validation",
@@ -23,12 +23,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/sirageDb/string-ops.git"
+        "url": "git+https://github.com/sirageDb/stringdation.git"
     },
     "author": "Sirage AL DBIYAT",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/sirageDb/string-ops/issues"
+        "url": "https://github.com/sirageDb/stringdation/issues"
     },
-    "homepage": "https://github.com/sirageDb/string-ops#readme"
+    "homepage": "https://github.com/sirageDb/stringdation#readme"
 }

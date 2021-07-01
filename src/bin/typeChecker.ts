@@ -6,6 +6,6 @@ type typeWhatIWant =
 
 export default function typeChecker(whatICheck: any, whatIWant: typeWhatIWant) {
     if (typeof whatICheck !== whatIWant) {
-        throw new Error('string-ops ERROR ::: got type ' + typeof whatICheck + ', expected ' + whatIWant);
+        throw new Error('stringdation ERROR ::: got type ' + typeof whatICheck + ', expected ' + whatIWant);
     }
 }
