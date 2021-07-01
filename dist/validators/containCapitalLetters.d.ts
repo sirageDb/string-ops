@@ -1,4 +1,4 @@
-export default function containCapitalLetters(stringToCheck: string, validatorOption: containCapitalLettersOptionType): {
+export declare function containCapitalLetters(stringToCheck: string, validatorOption: containCapitalLettersOptionType): {
     objectiveResolved: boolean;
     validator: string;
 } | undefined;

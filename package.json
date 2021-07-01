@@ -1,8 +1,10 @@
 {
     "name": "string-ops",
-    "version": "1.0.0",
-    "description": "Validation operation on strings",
-    "main": "index.js",
+    "version": "0.0.1",
+    "description": "Validation operations on strings",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": ["/dist"],
     "scripts": {
         "start": "tsc && node dist/index.js"
     },

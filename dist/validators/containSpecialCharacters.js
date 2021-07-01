@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.containSpecialCharacters = void 0;
 const ErrorHandler_1 = __importDefault(require("../bin/ErrorHandler"));
 const stringNotNull_1 = __importDefault(require("../bin/stringNotNull"));
 function containSpecialCharacters(stringToCheck, validatorOption) {
@@ -103,4 +104,4 @@ function containSpecialCharacters(stringToCheck, validatorOption) {
         }
     }
 }
-exports.default = containSpecialCharacters;
+exports.containSpecialCharacters = containSpecialCharacters;

@@ -1,4 +1,4 @@
-export default function containSpecialCharacters(stringToCheck: string, validatorOption: containSpecialCharactersOptionType): {
+export declare function containSpecialCharacters(stringToCheck: string, validatorOption: containSpecialCharactersOptionType): {
     objectiveResolved: boolean;
     validator: string;
 } | undefined;

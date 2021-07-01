@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.containerValidator = void 0;
 function containerValidator(validationResults) {
     let finalResult = {
         containerResult: false,
@@ -28,4 +29,4 @@ function containerValidator(validationResults) {
         return finalResult;
     }
 }
-exports.default = containerValidator;
+exports.containerValidator = containerValidator;

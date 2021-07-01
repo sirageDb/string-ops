@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.containSmallLetters = void 0;
 const ErrorHandler_1 = __importDefault(require("../bin/ErrorHandler"));
 const stringNotNull_1 = __importDefault(require("../bin/stringNotNull"));
 function containSmallLetters(stringToCheck, validatorOption) {
@@ -113,4 +114,4 @@ function containSmallLetters(stringToCheck, validatorOption) {
         }
     }
 }
-exports.default = containSmallLetters;
+exports.containSmallLetters = containSmallLetters;
