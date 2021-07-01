@@ -9,3 +9,4 @@ export { maxLength } from "./validators/maxLength";
 export { minLength } from "./validators/minLength";
 export { numberBiggerThan } from "./validators/numberBiggerThan";
 export { numberSmallerThan } from "./validators/numberSmallerThan";
+export { containNumber } from "./validators/containNumber";
